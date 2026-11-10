@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="esquema.xsd"
+          proveedor="TechStore S.L."
+          fecha="2026-11-10">
+
+  <producto id="TS-001" destacado="true">
+    <nombre>Portátil UltraBook Pro 14</nombre>
+    <descripcion>Portátil ligero con pantalla de 14 pulgadas, 16 GB de RAM y SSD de 512 GB.</descripcion>
+    <precio moneda="EUR">1299.90</precio>
+    <categoria>portatiles</categoria>
+    <disponibilidad stock="12">disponible</disponibilidad>
+  </producto>
+
+  <producto id="TS-002" destacado="true">
+    <nombre>Smartphone Nova X5</nombre>
+    <descripcion>Móvil con pantalla AMOLED de 6,5 pulgadas y cámara triple de 50 MP.</descripcion>
+    <precio moneda="EUR">599.00</precio>
+    <categoria>smartphones</categoria>
+    <disponibilidad stock="35">disponible</disponibilidad>
+  </producto>
+
+  <producto id="TS-003" destacado="false">
+    <nombre>Auriculares Inalámbricos SoundPulse</nombre>
+    <descripcion>Auriculares con cancelación activa de ruido y 30 horas de autonomía.</descripcion>
+    <precio moneda="EUR">149.50</precio>
+    <categoria>audio</categoria>
+    <disponibilidad stock="4">ultimas-unidades</disponibilidad>
+  </producto>
+
+  <producto id="TS-004" destacado="false">
+    <nombre>Tablet Slate 11</nombre>
+    <descripcion>Tablet de 11 pulgadas ideal para estudiar, dibujar y ver contenido.</descripcion>
+    <precio moneda="EUR">349.99</precio>
+    <categoria>tablets</categoria>
+    <disponibilidad stock="0">agotado</disponibilidad>
+  </producto>
+
+  <producto id="TS-005" destacado="true">
+    <nombre>Smartwatch FitTrack S</nombre>
+    <descripcion>Reloj inteligente con GPS, pulsómetro y resistencia al agua 5 ATM.</descripcion>
+    <precio moneda="EUR">199.00</precio>
+    <categoria>wearables</categoria>
+    <disponibilidad stock="20">disponible</disponibilidad>
+  </producto>
+
+  <producto id="TS-006" destacado="false">
+    <nombre>Teclado Mecánico KeyForge</nombre>
+    <descripcion>Teclado mecánico retroiluminado con switches silenciosos.</descripcion>
+    <precio moneda="EUR">89.90</precio>
+    <categoria>accesorios</categoria>
+    <disponibilidad stock="50">disponible</disponibilidad>
+  </producto>
+
+</catalogo>

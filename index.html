@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechStore | Tecnología de última generación</title>
+  <meta name="description" content="TechStore: descubre nuestros nuevos portátiles, smartphones, auriculares y wearables con envío rápido y garantía de 2 años.">
+  <meta name="keywords" content="tecnología, portátiles, smartphones, auriculares, smartwatch, tienda online">
+  <meta name="author" content="TechStore">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="TechStore | Tecnología de última generación">
+  <meta property="og:description" content="Nuevos productos tecnológicos con envío rápido y garantía de 2 años.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#263238">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="TechStore, ir al inicio">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        <span>TechStore</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#ventajas">Ventajas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 id="hero-titulo">La tecnología que necesitas, al mejor precio</h1>
+          <p>Descubre nuestra nueva colección de portátiles, móviles y accesorios con envío en 24 horas y 2 años de garantía.</p>
+          <a class="btn" href="#productos">Ver novedades</a>
+        </div>
+        <img class="hero-img" src="img/hero.svg" alt="Ilustración de un portátil, un móvil y unos auriculares sobre un fondo azul" width="480" height="320">
+      </div>
+    </section>
+
+    <section class="section" id="productos" aria-labelledby="productos-titulo">
+      <div class="container">
+        <h2 id="productos-titulo">Nuestros productos destacados</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="img/portatil.svg" alt="Portátil UltraBook Pro 14 con pantalla abierta" width="300" height="200" loading="lazy">
+            <h3>Portátil UltraBook Pro 14</h3>
+            <p>Ligero, potente y con 16 GB de RAM.</p>
+            <p class="price">1.299,90 €</p>
+          </article>
+          <article class="card">
+            <img src="img/movil.svg" alt="Smartphone Nova X5 con pantalla AMOLED" width="300" height="200" loading="lazy">
+            <h3>Smartphone Nova X5</h3>
+            <p>Cámara triple de 50 MP y pantalla AMOLED.</p>
+            <p class="price">599,00 €</p>
+          </article>
+          <article class="card">
+            <img src="img/auriculares.svg" alt="Auriculares inalámbricos SoundPulse" width="300" height="200" loading="lazy">
+            <h3>Auriculares SoundPulse</h3>
+            <p>Cancelación de ruido y 30 h de batería.</p>
+            <p class="price">149,50 €</p>
+          </article>
+          <article class="card">
+            <img src="img/reloj.svg" alt="Smartwatch FitTrack S con pulsera negra" width="300" height="200" loading="lazy">
+            <h3>Smartwatch FitTrack S</h3>
+            <p>GPS, pulsómetro y resistente al agua.</p>
+            <p class="price">199,00 €</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="ventajas" aria-labelledby="ventajas-titulo">
+      <div class="container">
+        <h2 id="ventajas-titulo">¿Por qué elegir TechStore?</h2>
+        <ul class="features">
+          <li><h3>Envío en 24 h</h3><p>Recibe tu pedido al día siguiente en toda la península.</p></li>
+          <li><h3>Garantía de 2 años</h3><p>Todos nuestros productos incluyen garantía completa.</p></li>
+          <li><h3>Soporte cercano</h3><p>Atención personalizada por chat y teléfono.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container narrow">
+        <h2 id="contacto-titulo">Contacta con nosotros</h2>
+        <form action="#" method="post">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 TechStore. Todos los derechos reservados.</p>
+      <p><a href="xml/catalogo.xml">Catálogo XML para proveedores</a></p>
+    </div>
+  </footer>
+</body>
+</html>

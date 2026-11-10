@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <!-- ========== TIPOS SIMPLES CON RESTRICCIONES ========== -->
+
+  <!-- Identificador: TS- seguido de 3 dígitos (ej. TS-001) -->
+  <xs:simpleType name="idProductoType">
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="TS-[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Nombre: no vacío, entre 3 y 80 caracteres -->
+  <xs:simpleType name="nombreType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="3"/>
+      <xs:maxLength value="80"/>
+      <xs:pattern value="\S.*\S"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Descripción: entre 10 y 250 caracteres -->
+  <xs:simpleType name="descripcionType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="10"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Precio: decimal positivo, máx. 2 decimales -->
+  <xs:simpleType name="precioType">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="99999.99"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Moneda ISO 4217 permitida -->
+  <xs:simpleType name="monedaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EUR"/>
+      <xs:enumeration value="USD"/>
+      <xs:enumeration value="GBP"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Categorías cerradas -->
+  <xs:simpleType name="categoriaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="portatiles"/>
+      <xs:enumeration value="smartphones"/>
+      <xs:enumeration value="tablets"/>
+      <xs:enumeration value="audio"/>
+      <xs:enumeration value="wearables"/>
+      <xs:enumeration value="accesorios"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Estado de disponibilidad -->
+  <xs:simpleType name="estadoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="disponible"/>
+      <xs:enumeration value="ultimas-unidades"/>
+      <xs:enumeration value="agotado"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ========== TIPOS COMPLEJOS ========== -->
+
+  <xs:complexType name="precioComplexType">
+    <xs:simpleContent>
+      <xs:extension base="precioType">
+        <xs:attribute name="moneda" type="monedaType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="disponibilidadComplexType">
+    <xs:simpleContent>
+      <xs:extension base="estadoType">
+        <xs:attribute name="stock" type="xs:nonNegativeInteger" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="productoType">
+    <xs:sequence>
+      <xs:element name="nombre"         type="nombreType"/>
+      <xs:element name="descripcion"    type="descripcionType"/>
+      <xs:element name="precio"         type="precioComplexType"/>
+      <xs:element name="categoria"      type="categoriaType"/>
+      <xs:element name="disponibilidad" type="disponibilidadComplexType"/>
+    </xs:sequence>
+    <xs:attribute name="id"        type="idProductoType" use="required"/>
+    <xs:attribute name="destacado" type="xs:boolean"     use="optional" default="false"/>
+  </xs:complexType>
+
+  <!-- ========== ELEMENTO RAÍZ ========== -->
+
+  <xs:element name="catalogo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="producto" type="productoType" minOccurs="5" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="proveedor" type="xs:string" use="required"/>
+      <xs:attribute name="fecha"     type="xs:date"   use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
